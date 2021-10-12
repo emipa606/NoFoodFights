@@ -1,5 +1,8 @@
 # Changelog for NoFoodFights
 
+1.0.2.0 - Should now catch all properties in vanilla brewing as well as they had the tools-definitions in the parent-def.
+
+
 1.0.1.0 - Mod updated for 1.3 and passed autotests
 
 
