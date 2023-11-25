@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ThingDef/ingestible/../tools</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ThingDef/ingestible/../equipmentType</xpath>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef/ingestible/..</xpath>
+    <value>
+      <tools Inherit="False" />
+      <equipmentType>None</equipmentType>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ThingDef/ingestible/../equippedAngleOffset</xpath>
+  </Operation>
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ThingDef/ingestible/../comps/li[compClass="CompEquippable"]</xpath>
+  </Operation>
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[@ParentName = "ResourceVerbBase"]/ingestible</xpath>
+    <match Class="PatchOperationAttributeSet">
+      <xpath>/Defs/ThingDef[@ParentName = "ResourceVerbBase"]/ingestible/..</xpath>
+      <attribute>ParentName</attribute>
+      <value>ResourceBase</value>
+    </match>
+  </Operation>
+</Patch>
